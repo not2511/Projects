@@ -1,1 +1,38 @@
+# FoodVisionMini
+
+FoodVisionMini is a deep learning-based food classification project that detects images of **Pizza, Sushi, and Steak** using **EfficientNet-B2** in PyTorch.
+
+## Features
+- Utilizes **EfficientNet-B2** for accurate food classification.
+- Trained on a dataset containing **Pizza, Sushi, and Steak** images.
+- Built with **PyTorch** for efficient model training and inference.
+- Supports deployment as a web or mobile application for real-time classification.
+
+## Installation
+### Prerequisites
+Ensure Python (>=3.8) is installed, along with the required dependencies.
+
+## Dataset
+The dataset includes labeled images for **Pizza, Sushi, and Steak** and can be customized or sourced from publicly available datasets.
+
+## Model Training
+- Preprocesses images (resize, normalize, augment) for training.
+- Fine-tunes **EfficientNet-B2** using transfer learning.
+- Optimized with **CrossEntropyLoss** and **Adam** optimizer.
+- Evaluates model performance on validation and test sets.
+
+## Inference
+The trained model can classify new images into one of the three categories.
+
+## Deployment
+Supports deployment using **Flask, FastAPI, or Streamlit** for web-based classification.
+
+## Future Improvements
+- Expand dataset for better model generalization.
+- Experiment with alternative deep learning architectures.
+- Deploy as a mobile application using **TensorFlow Lite** or **ONNX**.
+
+## License
+This project is open-source and available under the MIT License.
+
 
