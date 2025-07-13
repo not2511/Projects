@@ -49,7 +49,7 @@ Medical-Chatbot/
 
 1. **Clone and set up environment**:
    ```bash
-   git clone https://github.com/not2511/Projects/tree/main/Medical-Chatbot
+   git clone https://github.com/not2511/Projects
    cd Medical-Chatbot
    python -m venv medchat_env
    .\medchat_env\Scripts\activate
