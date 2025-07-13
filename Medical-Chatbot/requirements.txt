@@ -1,0 +1,8 @@
+transformers>=4.38.0
+datasets>=2.18.0
+peft>=0.10.0
+bitsandbytes
+torch
+accelerate
+gradio
+pymupdf
