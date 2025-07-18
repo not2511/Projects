@@ -1,0 +1,8 @@
+# Change the extension from .txt to .ipynb
+
+model = ScreamCNN()
+model.load_state_dict(torch.load("scream_cnn_model.pth"))
+model.eval()
+
+# if used gpu to train the model, uncomment this:
+# torch.load("scream_cnn_model.pth", map_location=torch.device('cpu'))
