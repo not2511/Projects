@@ -1,0 +1,199 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --muted: #777;
+  --accent: #1f6feb;
+  --glass: rgba(255,255,255,0.7);
+  --radius: 14px;
+  --padding: 18px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+.subtitle {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr; /* narrower left panel */
+  gap: 20px;
+  align-items: start;
+}
+
+/* Left panel: Upload card */
+.upload-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: var(--padding);
+  box-shadow: 0 6px 18px rgba(20,25,40,0.06);
+}
+
+.upload-card h2 { margin: 0 0 12px 0 }
+.dropzone {
+  display: block;
+  border: 2px dashed #e2e8f0;
+  padding: 22px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,250,250,0.6));
+}
+.dropzone input { display: none }
+.droptext { color: var(--muted); font-size: 13px }
+
+.control-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.control-row input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  font-size: 14px;
+}
+.control-row button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(31,111,235,0.18);
+}
+.control-row button:active { transform: translateY(1px) }
+
+.status { margin-top: 12px; padding: 10px; border-radius: 8px; background: #f3f6ff; color: #0b3bdb }
+.hidden { display: none }
+
+.indexed-list { margin-top: 16px }
+.indexed-list h3 { margin: 0 0 8px 0 }
+.indexed-list ul { list-style: none; padding: 0; margin: 0; max-height: 160px; overflow: auto }
+.indexed-list li { padding: 8px 10px; border-radius: 8px; border: 1px solid #f1f3f7; margin-bottom: 8px; font-size: 13px }
+.indexed-list .muted { color: var(--muted); border: 0; background: transparent }
+
+/* Right panel: Chat */
+.chat-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: var(--padding);
+  max-height: 420px; /* smaller height so entire app fits */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(20,25,40,0.06);
+  position: relative;
+  z-index: 1;
+}
+
+.chat-header { margin-bottom: 12px }
+.chat-title { font-weight: 700 }
+.chat-sub { color: var(--muted); font-size: 13px }
+
+.chat-window {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(250,250,255,0.8), rgba(245,247,255,0.9));
+  overflow-y: auto; /* ensure scrolling */
+  border: 1px solid #eef3ff;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Chat bubbles */
+.msg {
+  max-width: 78%;
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+.msg.user {
+  margin-left: auto;
+  background: #e8f0ff;
+}
+.msg.assistant {
+  margin-right: auto;
+  background: #f7f9fc;
+  border: 1px solid #eef2ff;
+  color: #111;
+}
+.system-msg {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ask form */
+.ask-form {
+  display: flex;
+  gap: 10px;
+  background: #fff;          /* solid background so it sits above chat */
+  padding: 6px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 5;                /* always above chat-window */
+}
+.ask-form input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e7ecf8;
+  font-size: 14px;
+}
+.ask-form button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(31,111,235,0.18);
+}
+
+.context-toggle { margin-top: 10px; font-size: 13px; position: relative; z-index: 1; }
+.context-block {
+  max-height: 160px;
+  overflow: auto;
+  background: #fafbff;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #eef2ff;
+  white-space: pre-wrap;
+  font-size: 13px;
+  color: #222;
+}
+
+.app-footer { text-align: center; margin-top: 18px; color: var(--muted); font-size: 13px }

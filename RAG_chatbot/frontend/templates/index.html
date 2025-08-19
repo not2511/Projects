@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Document RAG Chatbot</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Document RAG Chatbot</h1>
+      <p class="subtitle">Upload PDF / DOCX, then ask questions about your documents.</p>
+    </header>
+
+    <main class="main-grid">
+      <section class="left-panel">
+        <div class="upload-card">
+          <h2>Upload Document</h2>
+          <form id="uploadForm">
+            <label class="dropzone" id="dropzone">
+              <input id="fileInput" type="file" accept=".pdf,.docx" />
+              <div class="droptext">Drag & drop a PDF or DOCX here, or click to choose</div>
+            </label>
+
+            <div class="control-row">
+              <input id="docTitle" type="text" placeholder="Optional: give this doc a name" />
+              <button id="uploadBtn" type="submit">Upload & Index</button>
+            </div>
+
+            <div id="uploadStatus" class="status hidden"></div>
+          </form>
+
+          <div class="indexed-list">
+            <h3>Indexed Documents</h3>
+            <ul id="indexedDocs">
+              <li class="muted">No documents indexed yet.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="chat-card">
+          <div id="chatHeader" class="chat-header">
+            <div class="chat-title">Ask your documents</div>
+            <div class="chat-sub">Context-aware answers from indexed docs</div>
+          </div>
+
+          <div id="chatWindow" class="chat-window">
+            <div class="system-msg">Upload a document first. Then ask anything about it.</div>
+          </div>
+
+          <form id="askForm" class="ask-form">
+            <input id="queryInput" type="text" placeholder="Type your question here..." autocomplete="off" />
+            <button id="askBtn" type="submit">Ask</button>
+          </form>
+
+          <details class="context-toggle">
+            <summary>Show last retrieved context</summary>
+            <pre id="lastContext" class="context-block"></pre>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Local demo · Backend: http://localhost:8000</small>
+    </footer>
+  </div>
+
+  <script src="../static/js/app-fixed.js"></script>
+</body>
+</html>
