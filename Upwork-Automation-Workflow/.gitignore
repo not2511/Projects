@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+*.env
+*credentials.json
+*secrets*
+config/*credentials.json
+
+.n8n/
+Thumbs.db
+
+# Video files (too large for git)
+*.mp4
+*.mov
+*.avi
