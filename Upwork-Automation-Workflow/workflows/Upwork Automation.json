@@ -4,13 +4,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.apify.com/v2/acts/neatrat~upwork-job-scraper/run-sync-get-dataset-items?token=apify_api_FuknHL4gbzn6Ab0Pd4aK6CmsTmOEUv3WTzpJ",
+        "url": "https://api.apify.com/v2/acts/neatrat~upwork-job-scraper/run-sync-get-dataset-items?token=[APIFY_API_KEY]",
         "sendQuery": true,
         "queryParameters": {
           "parameters": [
             {
               "name": "token",
-              "value": "apify_api_FuknHL4gbzn6Ab0Pd4aK6CmsTmOEUv3WTzpJ"
+              "value": "[APIFY_API_KEY]"
             }
           ]
         },
